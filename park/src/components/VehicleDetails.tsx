@@ -27,7 +27,7 @@ const VehicleDetails:React.FC=()=>{
         let index=Math.floor(Math.random()*(val.free.length))-0;
         console.log(val.free[index]);
         setDetails({...details,space_number:val.free[index]});
-        AddAction(details,dispatch);
+        AddAction(details,dispatch)();
         console.log(val);
         }
     }

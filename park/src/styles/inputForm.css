@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.input_container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.307);
+}
+
+.input_box{
+    width: 50%;
+    margin: auto;
+}
+.input_box >input{
+    width: 100%;
+    padding: 13px;
+    margin-top: 5vh;
+    border-radius: 30px;
+    outline: none;
+    border:none;
+    font-size: 15px;
+}
+.submit_btn{
+    margin-top: 3vh;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: blueviolet;
+    font-weight: 550;
+    box-shadow: 0 0 3.5px darkcyan;
+    transition: 0.3s ease-in-out;
+}
+.submit_btn:hover{
+    background-color: rgba(137, 43, 226, 0.367);
+}
+.submit_btn:active{
+    transform: scale(0.5);
+}

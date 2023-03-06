@@ -1,13 +1,24 @@
 
 
 import React,{useState} from "react";
-
+import {useSelector} from "react-redux";
+import { InitialReducer } from "../@types/initialReducer";
+import {useNavigate} from "react-router-dom";
 const UserForm:React.FC=()=>{
     const[spaces,setSpaces]=useState<string>("");
 
+    const state:InitialReducer=useSelector<InitialReducer,InitialReducer>((sta:InitialReducer)=>{
+        return sta
+    })
+    const nav=useNavigate();
     const handleSubmit=(e:(React.FormEvent<HTMLFormElement>))=>{
         e.preventDefault();
-        console.log(1);
+        if(state.free.length<parseInt(spaces)){
+            alert("Parking is Full");
+        }
+        else{
+            nav("/details");
+        }
     }
 
     return (

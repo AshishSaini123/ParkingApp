@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 
 import './App.css';
 import UserForm from './components/UserForm';
+import { VehicleDetails } from './components/VehicleDetails';
 
 function App() {
   
@@ -10,6 +11,7 @@ function App() {
       
       <div className="App">
         <UserForm/>
+        <VehicleDetails />
       </div>
    
   );

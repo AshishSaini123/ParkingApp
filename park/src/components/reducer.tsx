@@ -10,6 +10,7 @@ const MyReducer=(state=initial,action:Action)=>{
 
     switch(action.type){
         case "Add":{
+            console.log("inside add reducer");
             const alloted=[...state.alloted,action.payload];
             const free=state.free.filter((el)=>{
                 return el!==action.payload.space_number

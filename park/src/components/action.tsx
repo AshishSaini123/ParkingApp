@@ -1,7 +1,9 @@
-import {Dispatch} from "redux"
+
+import { Dispatch } from "redux";
 import { User } from "../@types/User"
-const AddAction=(User:User)=>{
-    return (dispatch:Dispatch)=>{
+const AddAction=(User:User,dispatch:Dispatch)=>{
+    console.log("inside add");
+    return ()=>{
         dispatch({
             type:"Add",
             payload:User

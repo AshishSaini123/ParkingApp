@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
-import logo from './logo.svg';
+import React, { useContext, useState } from 'react';
+
 import './App.css';
-import InputForm from './components/inputForm';
-import store from './components/store';
-import CarDetails from './components/carDetails';
+import UserForm from './components/UserForm';
+
 function App() {
+  
   return (
-    
+
+      
       <div className="App">
-        {/* <InputForm /> */}
-        <CarDetails />
+        <UserForm/>
       </div>
    
   );

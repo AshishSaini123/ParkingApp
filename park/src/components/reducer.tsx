@@ -3,18 +3,19 @@ import { InitialReducer } from "../@types/initialReducer";
 
 const initial:InitialReducer={
     alloted:[{name:'Ashu',car_name:'Swift',car_number:'1265',space_number:1}],
-    free:[2,3,4,5,6,7,8,9,10]
+    free:[0,2,3,4,5,6,7,8,9,10]
 }
 
 const MyReducer=(state=initial,action:Action)=>{
 
     switch(action.type){
         case "Add":{
-            console.log("inside add reducer");
+            console.log("action.payload is",action.payload);
             const alloted=[...state.alloted,action.payload];
             const free=state.free.filter((el)=>{
                 return el!==action.payload.space_number
             })
+            console.log("free after doing adding thing",free);
             return{...state,alloted,free};
         }
         case "Delete":{

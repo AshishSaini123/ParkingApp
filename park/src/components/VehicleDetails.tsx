@@ -1,11 +1,14 @@
-import React ,{useState}from "react";
+import React ,{useEffect, useState}from "react";
 import { User } from "../@types/User";
 import { useSelector,useDispatch } from "react-redux";
 import { InitialReducer } from "../@types/initialReducer";
 import { AddAction } from "./action";
+import{useNavigate} from "react-router-dom";
+import "../styles/VehicleDetails.css"
 const VehicleDetails:React.FC=()=>{
 
     const dispatch=useDispatch();
+    const nav=useNavigate();
     const [details,setDetails]=useState<User>({name:'',car_name:'',car_number:'',space_number:0});
     const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
         const {name,value}=e.target;
@@ -16,25 +19,30 @@ const VehicleDetails:React.FC=()=>{
         return state;
     })
 
+    
     const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
-        console.log(details);
         
         if(val.free.length===0){
             alert("Parkiing is Full");
         }
         else{
-        let index=Math.floor(Math.random()*(val.free.length))-0;
-        console.log(val.free[index]);
-        setDetails({...details,space_number:val.free[index]});
+        
+        console.log("free is now change",val.free);
+        let index=Math.floor(Math.random()*(val.free.length));
+        console.log("val.free[index] is " ,val.free[index])
+        details.space_number=val.free[index];
+        setDetails(details);
+        console.log("details after space is",details);
         AddAction(details,dispatch)();
-        console.log(val);
+        nav("/vehiclelist")
         }
     }
 
     
     return (
-        <div>
+        <div className="details_page">
+            <h1>Enter Vehicle Details</h1>
             <form onSubmit={(e)=>handleSubmit(e)}>
                 <input type="text" name="name" onChange={(e)=>handleChange(e)} placeholder="Enter Name" />
                 <input type="text" name="car_name" onChange={(e)=>handleChange(e)} placeholder="Enter Car Name" />

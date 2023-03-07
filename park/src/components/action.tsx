@@ -2,7 +2,6 @@
 import { Dispatch } from "redux";
 import { User } from "../@types/User"
 const AddAction=(User:User,dispatch:Dispatch)=>{
-    console.log("inside add");
     return ()=>{
         dispatch({
             type:"Add",
@@ -11,8 +10,9 @@ const AddAction=(User:User,dispatch:Dispatch)=>{
     }
 }
 
-const DelAction=(id:User)=>{
-    return (dispatch:Dispatch)=>{
+const DelAction=(id:User,dispatch:Dispatch)=>{
+    console.log("inside delete")
+    return ()=>{
         dispatch({
         type:"Delete",
         payload:id

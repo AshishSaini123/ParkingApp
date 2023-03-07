@@ -19,6 +19,7 @@ const MyReducer=(state=initial,action:Action)=>{
             return{...state,alloted,free};
         }
         case "Delete":{
+            console.log("inside reducer delete")
             let alloted=state.alloted.filter(ele=>{
                 return ele.space_number!==action.payload.space_number
             })

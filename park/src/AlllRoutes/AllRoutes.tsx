@@ -12,7 +12,7 @@ const AllRoutes:React.FC=()=>{
                 <Route path="/" element={<UserForm />}/>
                 <Route path="/details" element={<VehicleDetails />}/>
                 <Route path="/vehiclelist" element={<VehicleList/>}/>
-                <Route path="/checkOut" element={<Checkout/>}/>
+                <Route path="/checkOut/:index" element={<Checkout/>}/>
                 <Route path="*" element={<div>Error 404 No Page found.....</div>} />
             </Routes>
         </Router>

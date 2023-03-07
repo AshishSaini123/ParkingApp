@@ -2,7 +2,7 @@ import { Action } from "../@types/Action";
 import { InitialReducer } from "../@types/initialReducer";
 
 const initial:InitialReducer={
-    alloted:[{name:'Ashu',car_name:'Swift',car_number:'1265',space_number:1}],
+    alloted:[{name:'Ashu',car_name:'Swift',car_number:'1265',space_number:1,parking_hrs:'2'}],
     free:[0,2,3,4,5,6,7,8,9,10]
 }
 

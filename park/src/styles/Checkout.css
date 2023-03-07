@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.status_container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.307);
+}
+.status_container>h1{
+    padding-top: 15vh;
+}
+.status_container>div{
+    width: 50%;
+    margin: auto;
+    padding-top: 2vh;
+}
+
+.status_container>div>h3{
+    background-color:  rgba(115, 30, 30, 0.307);
+    padding: 15px;
+    border-radius: 15px;
+}
+.status_container>div>button{
+    background-color:rgba(117, 5, 5, 0.838);
+    padding: 15px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    color: white;
+    font-weight: 550;
+    cursor: pointer;
+    margin-top: 3vh;
+}

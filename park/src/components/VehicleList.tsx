@@ -3,14 +3,10 @@
 
 import React from "react";
 import{useSelector} from "react-redux"
-import { useState } from "react";
 import { InitialReducer } from "../@types/initialReducer";
-// import { DelAction } from "./action";
-import { User } from "../@types/User";
-import {useDispatch} from "react-redux"
 import {useNavigate} from "react-router-dom";
+import "../styles/VehicleList.css"
 const VehicleList:React.FC=()=>{
-    // const dispatch=useDispatch();
     const nav=useNavigate();
     const data:InitialReducer=useSelector<InitialReducer,InitialReducer>((state:InitialReducer)=>{
         return state;
@@ -18,14 +14,13 @@ const VehicleList:React.FC=()=>{
     console.log(data);
     const handleClick=(i:number)=>{
         nav(`/checkout/${i}`)
-        // DelAction(i,dispatch)();
     }
     return (
-        <div>
+        <div className="table_container">
             <h3>{`The previous car is assigned at space number ${data.alloted[data.alloted.length-1].space_number}`}</h3>
             <h3> All Vehicle Details</h3>
 
-            <div>
+            <div className="car_table">
                 <table>
                     <tr>
                         <th>Space_Number</th>
@@ -41,6 +36,7 @@ const VehicleList:React.FC=()=>{
                             <td>{ele.name}</td>
                             <td>{ele.car_name}</td>
                             <td>{ele.car_number}</td>
+                            <td>{ele.parking_hrs}</td>
                             <td><button onClick={()=>handleClick(ele.space_number)}>Checkout</button></td>
                         </tr>
                     )

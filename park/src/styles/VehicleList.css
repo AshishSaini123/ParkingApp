@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.table_container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.307);
+}
+
+.table_container>h3{
+    padding-top:3vh ;
+}
+.car_table{
+    width: 60%;
+    margin: auto;
+}
+.car_table>table{
+    width: 100%;
+}
+.car_table>table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+th,td{
+    padding: 5px;
+}
+td>button{
+    background-color:rgb(6, 82, 85);
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 550;
+    cursor: pointer;
+}
